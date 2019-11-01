@@ -10,6 +10,7 @@ export default () => (
     <Router>
         <Switch>
             <Route path='/' component={LoginPage} />
+            <Route path='/login' component={LoginPage} />
         </Switch>
     </Router>
 );
