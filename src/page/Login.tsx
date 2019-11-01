@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import { Form, Input, Button,Icon } from 'antd';
 import './LoginPage.css';
 import BeanUtil from '../common/BeanUtil';
-export class loginDto{
-    username?:string;
-    password?:string;
-}
+
 export default class LoginPage extends Component<any,loginDto> {
     constructor(props?: any){
         super(props)
@@ -53,4 +50,8 @@ export default class LoginPage extends Component<any,loginDto> {
         })
     }
 
+}
+export class loginDto{
+    username?:string;
+    password?:string;
 }
