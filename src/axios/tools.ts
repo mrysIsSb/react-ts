@@ -41,3 +41,31 @@ export const post = ({ url, data, msg = '接口异常', config }: IFRequestParam
             console.log(err);
             message.warn(msg);
         });
+
+interface RequestData {
+    url: string;
+    headers?: any;
+    params?: any;
+    body?: any;
+    success?:(res:any)=>{};
+    exMsg?: string;
+}
+const ex_msg = '接口异常'
+
+export const GET = ({ url, params,success=res => res.data, exMsg = ex_msg }: RequestData) =>
+    axios.get(url, {
+        params: params
+    }).then(success)
+        .catch(err => {
+            console.log(err);
+            message.warn(exMsg);
+        });
+
+export const POST = ({ url, params, body,success=res => res.data, exMsg = ex_msg}: RequestData) =>
+    axios.post(url, body, {
+        params: params
+    }).then(success)
+        .catch(err => {
+            console.log(err);
+            message.warn(exMsg);
+        }); 
