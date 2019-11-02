@@ -22,21 +22,21 @@ export default Form.create()(class LoginPage extends Component<LoginProps> {
   //     this.state = lo;
   //   }
 
-//   componentDidMount() {
-//       console.log(this.props)
-//     const { setAlitaState } = this.props;
-//     setAlitaState({ stateName: "auth", data: null });
-//   }
-//   componentDidUpdate(prevProps: any & FormProps & RouteComponentProps) {
-//     // React 16.3+弃用componentWillReceiveProps
-//     const { auth: nextAuth = {}, history } = this.props;
-//     // const { history } = this.props;
-//     if (nextAuth.data && nextAuth.data.uid) {
-//       // 判断是否登陆
-//       localStorage.setItem("user", JSON.stringify(nextAuth.data));
-//       history.push("/");
-//     }
-//   }
+  componentDidMount() {
+      console.log(this.props)
+    const { setAlitaState } = this.props;
+    setAlitaState({ stateName: "auth", data: null });
+  }
+  componentDidUpdate(prevProps: any & FormProps & RouteComponentProps) {
+    // React 16.3+弃用componentWillReceiveProps
+    const { auth: nextAuth = {}, history } = this.props;
+    // const { history } = this.props;
+    if (nextAuth.data && nextAuth.data.uid) {
+      // 判断是否登陆
+      localStorage.setItem("user", JSON.stringify(nextAuth.data));
+      history.push("/");
+    }
+  }
   handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(this.props);
