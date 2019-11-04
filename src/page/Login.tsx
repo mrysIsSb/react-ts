@@ -62,7 +62,7 @@ export default Form.create()(
             <div className="login-logo">
               <span>mrys admin</span>
             </div>
-            <Form onSubmit={this.handleSubmit} style={{ maxWidth: "300px" }}>
+            <Form onSubmit={this.handleSubmit}>
               <FormItem>
                 {getFieldDecorator("username", {
                   rules: [{ required: true, message: "请输入用户名!" }]
