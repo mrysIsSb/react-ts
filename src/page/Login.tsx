@@ -4,8 +4,9 @@ import "./LoginPage.css";
 import BeanUtil from "../common/BeanUtil";
 import { RouteComponentProps } from "react-router";
 import { FormProps } from "antd/lib/form";
-import { login } from "../axios/api";
-
+import * as api from "../axios/api";
+import * as apiPath from "../axios/apiPath";
+import {withRouter } from 'react-router';
 const FormItem = Form.Item;
 
 type LoginProps = {
@@ -13,7 +14,7 @@ type LoginProps = {
   auth: any;
 } & RouteComponentProps &
   FormProps;
-export default Form.create()(
+export default Form.create()(withRouter(
   class LoginPage extends Component<LoginProps> {
     //   constructor(props?: p) {
     //     super(props);
@@ -50,7 +51,7 @@ export default Form.create()(
             setAlitaState({ funcName: "admin", stateName: "auth" });
           if (values.username === "guest" && values.password === "guest")
             setAlitaState({ funcName: "guest", stateName: "auth" });
-          login( values, () => {});
+          api.login( values, this.props.history.push(apiPath.homePage));
         }
       });
     };
@@ -117,7 +118,7 @@ export default Form.create()(
         return a;
       });
     }
-  }
+  })
 );
 export class loginDto {
   username?: string;
