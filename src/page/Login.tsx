@@ -51,7 +51,7 @@ export default Form.create()(withRouter(
             setAlitaState({ funcName: "admin", stateName: "auth" });
           if (values.username === "guest" && values.password === "guest")
             setAlitaState({ funcName: "guest", stateName: "auth" });
-          api.login( values, this.props.history.push(apiPath.homePage));
+          api.login( values, this.props.history.push("/app"));
         }
       });
     };
@@ -86,7 +86,7 @@ export default Form.create()(withRouter(
                 )}
               </FormItem>
               <FormItem>
-                <Checkbox>记住我</Checkbox>
+                {/* <Checkbox>记住我</Checkbox> */}
                 <span className="login-form-forgot" style={{ float: "right" }}>
                   忘记密码
                 </span>
