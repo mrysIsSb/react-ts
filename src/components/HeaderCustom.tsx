@@ -74,10 +74,10 @@ class HeaderCustom extends Component<HeaderCustomProps, HeaderCustomState> {
         this.setState({ visible });
     };
     render() {
-        const { responsive = { data: {} } } = this.props;
+        // const { responsive = { data: {} } } = this.props;
         return (
             <Header className="custom-theme header">
-                {responsive.data.isMobile ? (
+                {/* {responsive.data.isMobile ? (
                     <Popover
                         content={<SiderCustom popoverHide={this.popoverHide} />}
                         trigger="click"
@@ -87,13 +87,13 @@ class HeaderCustom extends Component<HeaderCustomProps, HeaderCustomState> {
                     >
                         <Icon type="bars" className="header__trigger custom-trigger" />
                     </Popover>
-                ) : (
+                ) : ( */}
                     <Icon
                         className="header__trigger custom-trigger"
                         type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'}
                         onClick={this.props.toggle}
                     />
-                )}
+                {/* )} */}
                 <Menu
                     mode="horizontal"
                     style={{ lineHeight: '64px', float: 'right' }}
@@ -102,9 +102,9 @@ class HeaderCustom extends Component<HeaderCustomProps, HeaderCustomState> {
                     <Menu.Item key="pwa">
                         {/* <PwaInstaller /> */}
                     </Menu.Item>
-                    <Menu.Item key="full" onClick={this.screenFull}>
+                    {/* <Menu.Item key="full" onClick={this.screenFull}>
                         <Icon type="arrows-alt" onClick={this.screenFull} />
-                    </Menu.Item>
+                    </Menu.Item> */}
                     <Menu.Item key="1">
                         <Badge count={25} overflowCount={10} style={{ marginLeft: 10 }}>
                             <Icon type="notification" />

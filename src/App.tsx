@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Routes from "./routes";
 import DocumentTitle from "react-document-title";
-// // import SiderCustom from './components/SiderCustom';
+import SiderCustom from './components/SiderCustom';
 import HeaderCustom from './components/HeaderCustom';
 import { Layout, notification, Icon } from "antd";
-// // import { ThemePicker } from './components/widget';
+// import { ThemePicker } from './components/widget';
 // import { connectAlita } from 'redux-alita';
 // import { checkLogin } from './utils';
 
@@ -138,6 +138,8 @@ export default class App extends Component<AppProps> {
           {/* {!responsive.data.isMobile && checkLogin(auth.data.permissions) && (
                         <SiderCustom collapsed={this.state.collapsed} />
                     )} */}
+          {/* <ThemePicker /> */}
+          <SiderCustom collapsed={this.state.collapsed} />
           {/* <ThemePicker /> */}
           <Layout style={{ flexDirection: "column" }}>
             <HeaderCustom
