@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import * as path from "./axios/apiPath";
 import * as page from "./page/Mrys";
-import App from "./App";
+import  App  from "./App";
 
 export default () => (
   <Router>
