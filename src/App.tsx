@@ -124,7 +124,11 @@ export default class App extends Component<AppProps> {
     collapsed: false,
     title: "mrysissb.com"
   };
-
+  toggle = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  };
   render() {
     const { title } = this.state;
     const { auth = { data: {} }, responsive = { data: {} } } = this.props;
@@ -137,10 +141,10 @@ export default class App extends Component<AppProps> {
           {/* <ThemePicker /> */}
           <Layout style={{ flexDirection: "column" }}>
             <HeaderCustom
-                            toggle={this.toggle}
-                            collapsed={this.state.collapsed}
-                            user={auth.data || {}}
-                        />
+              toggle={this.toggle}
+              collapsed={this.state.collapsed}
+              user={auth.data || {}}
+            />
             <Content
               style={{ margin: "0 16px", overflow: "initial", flex: "1 1 0" }}
             >

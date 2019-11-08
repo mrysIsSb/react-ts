@@ -1,6 +1,5 @@
 import { GET, POST } from './tools';
 import * as path from './apiPath';
-import { url } from 'inspector';
 
 export interface loginDTO {
     username: string;
