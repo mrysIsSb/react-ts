@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import DocumentTitle from 'react-document-title';
 // import AllComponents from '../components';
+import page from "../page/Mrys";
 import routesConfig, { IFMenuBase, IFMenu } from './config';
 import queryString from 'query-string';
 import { checkLogin } from '../utils';
@@ -40,6 +41,7 @@ export default class CRouter extends Component<CRouterProps> {
                     routesConfig[key].map((r: IFMenu) => {
                         const route = (r: IFMenuBase) => {
                             // const Component = r.component && AllComponents[r.component];
+                            const Component = r.component && page[r.component];
                             return (
                                 <Route
                                     key={r.route || r.key}

@@ -1,7 +1,13 @@
 import React, { Component } from "react";
+import BreadcrumbCustom from "../components/BreadcrumbCustom";
+
 
 export default class HomePage extends Component<any>{
     render() {
-        return ";sadkf;kjasd;lksdj;k"
+        return (
+            <div>
+                <BreadcrumbCustom />
+            </div>
+        )
     }
 }
