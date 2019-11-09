@@ -12,7 +12,7 @@ export default () => (
       <Route path="/app" component={App} />
       {/* <Route path="/app/dashboard/index" component={page.HomePage} /> */}
       <Route path={path.loginPage} component={page.Login} />
-      <Route path={path.homePage} component={page.HomePage} />
+      {/* <Route path={path.homePage} component={page.HomePage} /> */}
     </Switch>
   </Router>
 );

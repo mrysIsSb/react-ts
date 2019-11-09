@@ -23,7 +23,7 @@ const menus: {
     menus: [
         // 菜单相关路由
         // { key: '/app/dashboard/index', title: '首页', icon: 'mobile', component: 'Dashboard' },
-        { key: '/home', title: '首页', icon: 'mobile', component: page.HomePage.name },
+        { key: '/home', title: '首页', icon: 'mobile', component: 'HomePage' },
         // {
         //     key: '/app/ui',
         //     title: 'UI',
