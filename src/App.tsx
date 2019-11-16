@@ -5,7 +5,7 @@ import SiderCustom from './components/SiderCustom';
 import HeaderCustom from './components/HeaderCustom';
 import { Layout, notification, Icon } from "antd";
 // import { ThemePicker } from './components/widget';
-// import { connectAlita } from 'redux-alita';
+import { connectAlita } from 'redux-alita';
 // import { checkLogin } from './utils';
 
 const { Content, Footer } = Layout;
@@ -119,7 +119,7 @@ type AppProps = {
 
 // export default connectAlita(['auth', 'responsive'])(App);
 
-export default class App extends Component<AppProps> {
+class App extends Component<AppProps> {
   state = {
     collapsed: false,
     title: "mrysissb.com"
@@ -150,7 +150,7 @@ export default class App extends Component<AppProps> {
             <Content
               style={{ margin: "0 16px", overflow: "initial", flex: "1 1 0" }}
             >
-              {/* <Routes auth={auth} /> */}
+              <Routes auth={auth} />
             </Content>
             <Footer style={{ textAlign: "center" }}>
               mrys-Admin ©{new Date().getFullYear()} Created by
@@ -162,3 +162,4 @@ export default class App extends Component<AppProps> {
     );
   }
 }
+export default connectAlita(['auth', 'responsive'])(App);
