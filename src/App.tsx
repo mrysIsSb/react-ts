@@ -141,7 +141,7 @@ class App extends Component<AppProps> {
           {/* <ThemePicker /> */}
           <SiderCustom collapsed={this.state.collapsed} />
           {/* <ThemePicker /> */}
-          <Layout style={{ flexDirection: "column" }}>
+          <Layout style={{ flexDirection: "column"}}>
             <HeaderCustom
               toggle={this.toggle}
               collapsed={this.state.collapsed}

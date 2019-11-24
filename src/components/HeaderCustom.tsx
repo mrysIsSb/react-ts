@@ -76,7 +76,7 @@ class HeaderCustom extends Component<HeaderCustomProps, HeaderCustomState> {
     render() {
         // const { responsive = { data: {} } } = this.props;
         return (
-            <Header className="custom-theme header">
+            <Header className="custom-theme header" >
                 {/* {responsive.data.isMobile ? (
                     <Popover
                         content={<SiderCustom popoverHide={this.popoverHide} />}

@@ -23,7 +23,28 @@ const menus: {
     menus: [
         // 菜单相关路由
         // { key: '/app/dashboard/index', title: '首页', icon: 'mobile', component: 'Dashboard' },
-        { key: '/home', title: '首页', icon: 'mobile', component: 'HomePage' },
+        { key: '/app/home', title: '首页', icon: 'mobile', component: 'HomePage' },
+        {
+            key:'/app/user',
+            title:'用户管理',
+            icon:'team',
+            subs:[
+                {key:'/app/user/list',title:'用户列表',component:'UserList'}
+            ]
+        },
+        {
+            key:'/app/goods',
+            title:'商品管理',
+            icon:'shopping',
+            subs:[
+                {key:'/app/goods/list',title:'商品列表',component:'GoodsList'}
+            ]
+        },
+        {
+            key:'/app/system',
+            icon:'setting',
+            title:'系统管理'
+        },
         // {
         //     key: '/app/ui',
         //     title: 'UI',
