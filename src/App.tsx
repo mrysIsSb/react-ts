@@ -135,12 +135,7 @@ class App extends Component<AppProps> {
     return (
       <DocumentTitle title={title}>
         <Layout>
-          {/* {!responsive.data.isMobile && checkLogin(auth.data.permissions) && (
-                        <SiderCustom collapsed={this.state.collapsed} />
-                    )} */}
-          {/* <ThemePicker /> */}
           <SiderCustom collapsed={this.state.collapsed} />
-          {/* <ThemePicker /> */}
           <Layout style={{ flexDirection: "column"}}>
             <HeaderCustom
               toggle={this.toggle}
