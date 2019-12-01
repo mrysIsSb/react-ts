@@ -3,11 +3,12 @@ import { Card, Icon, Avatar, Row, Col, Statistic } from "antd";
 import React from "react";
 import Meta from "antd/lib/card/Meta";
 import BreadcrumbCustom from "../components/BreadcrumbCustom";
+import {connectAlita} from "redux-alita";
 const data = [
     {},{},{},{},{},{},{},{},
     {},{},{},{},{},{},{},{},
 ]
-export default class GoodsList extends Component<any>{
+class GoodsList extends Component<any>{
     render() {
         return (
             <div >
@@ -48,3 +49,4 @@ export default class GoodsList extends Component<any>{
         )
     }
 }
+export default connectAlita(['auth', 'responsive'])(GoodsList);
