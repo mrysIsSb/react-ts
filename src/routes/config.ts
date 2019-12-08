@@ -1,5 +1,5 @@
 import * as page from "../page/Mrys";
-export interface IFMenuBase {
+export interface  IFMenuBase {
     key: string;
     title: string;
     icon?: string;

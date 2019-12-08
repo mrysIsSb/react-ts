@@ -9,6 +9,7 @@ import page from "../page/Mrys";
 import routesConfig, { IFMenuBase, IFMenu } from './config';
 import queryString from 'query-string';
 import { checkLogin } from '../utils';
+import {message} from "antd";
 
 type CRouterProps = {
     auth: any;
