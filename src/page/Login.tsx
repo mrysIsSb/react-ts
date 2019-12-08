@@ -7,6 +7,7 @@ import { FormProps } from "antd/lib/form";
 import * as api from "../axios/api";
 import * as apiPath from "../axios/apiPath";
 import {withRouter } from 'react-router';
+import {connectAlita} from "redux-alita";
 const FormItem = Form.Item;
 
 type LoginProps = {
@@ -14,44 +15,19 @@ type LoginProps = {
   auth: any;
 } & RouteComponentProps &
   FormProps;
-export default Form.create()(withRouter(
+export default connectAlita(['auth'])(Form.create()(withRouter(
   class LoginPage extends Component<LoginProps> {
-    //   constructor(props?: p) {
-    //     super(props);
-    //     this.loginClick = this.loginClick.bind(this);
-    //     this.updateUsername = this.updateUsername.bind(this);
-    //     let lo = new loginDto();
-    //     lo.username = "12312";
-    //     this.state = lo;
-    //   }
-
-    // componentDidMount() {
-    //     console.log(this.props)
-    //   const { setAlitaState } = this.props;
-    //   setAlitaState({ stateName: "auth", data: null });
-    // }
-    // componentDidUpdate(prevProps: any & FormProps & RouteComponentProps) {
-    //   // React 16.3+弃用componentWillReceiveProps
-    //   const { auth: nextAuth = {}, history } = this.props;
-    //   // const { history } = this.props;
-    //   if (nextAuth.data && nextAuth.data.uid) {
-    //     // 判断是否登陆
-    //     localStorage.setItem("user", JSON.stringify(nextAuth.data));
-    //     history.push("/");
-    //   }
-    // }
     handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
-      console.log(this.props);
       this.props.form!.validateFields((err, values) => {
         if (!err) {
-          console.log("Received values of form: ", values);
           const { setAlitaState } = this.props;
-          if (values.username === "admin" && values.password === "admin")
-            setAlitaState({ funcName: "admin", stateName: "auth" });
-          if (values.username === "guest" && values.password === "guest")
-            setAlitaState({ funcName: "guest", stateName: "auth" });
-          api.login( values, this.props.history.push("/app"));
+          // if (values.username === "admin" && values.password === "admin")
+            // setAlitaState({ funcName: "admin", stateName: "auth" });
+          // if (values.username === "guest" && values.password === "guest")
+            // setAlitaState({ funcName: "guest", stateName: "auth" });
+          this.props.history.push("/app");
+          // api.login( values, this.props.history.push("/app"));
         }
       });
     };
@@ -104,22 +80,8 @@ export default Form.create()(withRouter(
         </div>
       );
     }
-
-    loginClick(e: any) {
-      console.log(this.state);
-    }
-
-    updateUsername(e: any) {
-      const username = e.target.value;
-      this.setState(dto => {
-        let a = new loginDto();
-        BeanUtil.copy(dto, a);
-        a.username = username;
-        return a;
-      });
-    }
   })
-);
+));
 export class loginDto {
   username?: string;
   password?: string;
