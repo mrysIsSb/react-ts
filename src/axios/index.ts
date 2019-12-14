@@ -4,6 +4,7 @@
 import axios from 'axios';
 import { get, post } from './tools';
 import * as config from './config';
+import {url} from "inspector";
 
 export const getBbcNews = () => get({ url: config.NEWS_BBC });
 
@@ -43,3 +44,5 @@ export const gitOauthInfo = (access_token: string) =>
 export const admin = () => get({ url: config.MOCK_AUTH_ADMIN });
 // 访问权限获取
 export const guest = () => get({ url: config.MOCK_AUTH_VISITOR });
+
+export const login = ({username,password}:any) => get({url:"http://localhost:8080/login?username="+username+"&password="+password});

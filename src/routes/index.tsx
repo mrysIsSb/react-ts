@@ -29,13 +29,17 @@ export default class CRouter extends Component<CRouterProps> {
     };
     requireLogin = (component: React.ReactElement, permit: any) => {
         const permits = this.getPermits();
+        console.log(permits);
+        console.log(permit);
         if (!checkLogin(permits)) {
+            //todo 这里有问题
             // 线上环境判断是否登录
             return <Redirect to={'/login'} />;
         }
         return permit ? this.requireAuth(permit, component) : component;
     };
     render() {
+        console.log(this.props);
         return (
             <Switch>
                 {Object.keys(routesConfig).map(key =>

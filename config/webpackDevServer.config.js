@@ -86,6 +86,11 @@ module.exports = function(proxy, allowedHost) {
         target:'http://mag1r.hbxrsj.com:8881',
         changeOrigin:true,
         pathRewrite:{'^/admin':''}
+      },
+      '/':{
+        target:'http://localhost:8080',
+        changeOrigin:true,
+        pathRewrite:{'^/':''}
       }
     },
     before(app, server) {

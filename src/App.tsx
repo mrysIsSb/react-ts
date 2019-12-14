@@ -27,8 +27,10 @@ class App extends Component<AppProps> {
     });
   };
   render() {
+    console.log(this.props);
     const { title } = this.state;
     const { auth = { data: {} }, responsive = { data: {} } } = this.props;
+    console.log(auth);
     return (
       <DocumentTitle title={title}>
         <Layout>

@@ -5,7 +5,7 @@ export interface  IFMenuBase {
     icon?: string;
     component?: string;
     query?: string;
-    auth?: string;
+    auth?: string; //空为不需要验证
     route?: string;
     /** 是否登录校验，true不进行校验（访客） */
     login?: boolean;
